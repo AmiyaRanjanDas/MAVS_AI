@@ -7,7 +7,7 @@
   font-family: "FunnelDisplay";
   src: url("../fonts/FunnelDisplay-VariableFont_wght.ttf") format("truetype");
 }
-html,
+html, 
 body {
   overflow-x: hidden !important;
 }
@@ -230,6 +230,7 @@ body {
     position: absolute;
     top: 80px;
     right: -100%;
+    width: 100%;
     background: linear-gradient(45deg,#0e5067 0%,var(--primary-color) 50%);
     flex-direction: column;
     justify-content: center;
@@ -1235,11 +1236,6 @@ body {
   transform: translateY(-50%);
   right: -900px;
   z-index: 0;
-}
-.booking_section .containers {
-  padding: 0 10vh;
-  position: relative;
-  z-index: 2;
 }
 .booking_section .content h5 {
   color: var(--secondary-color);
