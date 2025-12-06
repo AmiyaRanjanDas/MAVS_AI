@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>MAVS AI</title>
-    <link rel="icon" type="image/x-icon" href="" />
+    <link rel="icon" type="image/x-icon" href="./assets/images/icon.png" />
     <link rel="stylesheet" href="./assets/css/bootstrap.min.css" />
     <link rel="stylesheet" href="./assets/css/owl.carousel.min.css" />
     <link rel="stylesheet" href="./assets/css/owl.theme.default.min.css" />
@@ -52,12 +52,12 @@
           <div class="col-md-6 mb-4 mb-md-0 flex_box">
             <div class="content">
               <h2 class="mb-4 d-none d-md-block">
-                Secure every<br />
+                Secure<br />
                 <span>GenAI interaction,</span><br />
                 Enable every team.
               </h2>
               <h2 class="mb-3 d-block d-md-none">
-                Secure every
+                Secure
                 <span>GenAI interaction,</span>
                 Enable every team.
               </h2>
@@ -72,7 +72,9 @@
               </p>
               <div class="pt-3 btn_box">
                 <a href="./book_demo.html" class="btn book_btn">Book a Demo</a>
-                <a href="#introduction_section" class="btn explore_btn">Explore Solution</a>
+                <a href="#introduction_section" class="btn explore_btn"
+                  >Explore Solution</a
+                >
               </div>
             </div>
           </div>
@@ -225,6 +227,15 @@
             <p>
               Carefully crafted prompts bypass safety controls to make the AI
               generate prohibited or harmful content
+            </p>
+          </div>
+        </div>
+        <div class="item">
+          <div class="card">
+            <h4>Lack of Visibility</h4>
+            <p>
+              No insight into AI usage - What data is being shared, where it is
+              going, or in what context
             </p>
           </div>
         </div>
@@ -490,7 +501,9 @@
               Start your Secure AI Journey<br class="d-none d-md-block" />
               today with <span>Mavs AI</span>
             </h3>
-            <a class="book_demo btn my-0 my-md-3" href="./book_demo.html"> BOOK A DEMO </a>
+            <a class="book_demo btn my-0 my-md-3" href="./book_demo.html">
+              BOOK A DEMO
+            </a>
             <h5 class="mt-4 mb-0">
               Prefer E-Mail? Reach us at
               <a href="mailto:founders@mavsai.ai">founders@mavsai.ai</a>
@@ -510,23 +523,28 @@
               <p class="mb-3">
                 Prefer E-Mail? Reach us at
                 <a href="mailto:founders@mavsai.ai">founders@mavsai.ai</a>
-              </p> 
-              <p class="mb-4">
+              </p>
+              <p class="mb-3">
                 Follow us on
-                <a href="https://www.linkedin.com/company/mavs-ai/" target="_blank">
+                <a
+                  href="https://www.linkedin.com/company/mavs-ai/"
+                  target="_blank"
+                >
                   <img src="./assets/images/linkedin.png" alt="" />
                 </a>
               </p>
-              <img
-                src="./assets/images/contact_img_1.png"
-                alt=""
-                class="contact_img"
-              />
-              <img
-                src="./assets/images/contact_img_2.png"
-                alt=""
-                class="contact_img ms-3"
-              />
+              <div class="contact_imgs">
+                <img
+                  src="./assets/images/contact_img_1.png"
+                  alt=""
+                  class="contact_img_1"
+                />
+                <img
+                  src="./assets/images/contact_img_2.png"
+                  alt=""
+                  class="contact_img_2"
+                />
+              </div>
             </div>
           </div>
           <div class="col-md-4 mb-4 mb-md-0 flex_box align-items-start">
@@ -653,7 +671,7 @@
           stagger: 0.09,
           delay: 2.2,
         });
-        gsap.from(".home_section .vid_box", {
+        gsap.from(".home_section .vid_box video", {
           clipPath: "inset(0 0 100% 0)", // reveal full width
           duration: 3,
           ease: "power4.inOut",
