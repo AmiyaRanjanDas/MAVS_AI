@@ -80,7 +80,14 @@
           </div>
           <div class="col-md-6 position-relative">
             <div class="vid_box">
-              <video autoplay muted loop>
+              <video
+                autoplay
+                muted
+                loop
+                playsinline
+                webkit-playsinline
+                preload="auto"
+              >
                 <source src="./assets/images/home_bg.mp4" type="video/mp4" />
               </video>
             </div>
@@ -671,12 +678,6 @@
           stagger: 0.09,
           delay: 2.2,
         });
-        gsap.from(".home_section .vid_box video", {
-          clipPath: "inset(0 0 100% 0)", // reveal full width
-          duration: 3,
-          ease: "power4.inOut",
-          delay: 1.2,
-        });
         gsap.from(".home_section .img_box img", {
           opacity: 0,
           y: 10,
@@ -686,6 +687,17 @@
           delay: 2.2,
         });
       });
+
+      const video = document.querySelector(".home_section .vid_box video");
+      video.addEventListener("loadeddata", () => {
+        gsap.from(video, {
+          clipPath: "inset(0 0 100% 0)",
+          duration: 3,
+          ease: "power4.inOut",
+          delay: 1.2,
+        });
+      });
+
       // ------Slider-------
       // Add this JavaScript to handle Slider Animation & Function
       $(document).ready(function () {
