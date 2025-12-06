@@ -400,11 +400,10 @@ body {
   }
   .home_section .vid_box {
     position: relative;
-    height: 85vh;
+    height: 75vh;
   }
   .home_section video {
-    left: 50%;
-    transform: translate(-50%, -50%) scale(1.2);
+    left: 50% !important;
   }
   .home_section .content {
     text-align: center;
@@ -421,13 +420,14 @@ body {
     padding: 5px 12px;
   }
   .home_section .img_box {
-    left: 49.5%;
+    left: 48.5%;
     gap: 2px;
   }
   .home_section .img_box img {
     transform: scale(0.7);
   }
 }
+
 /* ========risk_section======= */
 .risk_section {
   position: relative;
