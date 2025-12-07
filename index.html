@@ -25,10 +25,23 @@
       </div>
       <div class="button_content">
         <ul>
-          <li>
-            <a href="#introduction_section" class="nav-link">solutions</a>
+          <li class="has-submenu">
+            <a href="javascript:void(0)" class="nav-link">Solutions</a>
+            <ul class="submenu">
+              <li><a href="#">For Employees</a></li>
+              <li><a href="#">For Homegrown AI Apps</a></li>
+              <li><a href="#">For AI Governance</a></li>
+            </ul>
           </li>
-          <li><a href="./company.html" class="nav-link">company</a></li>
+
+          <li class="has-submenu">
+            <a href="javascript:void(0)" class="nav-link">Company</a>
+            <ul class="submenu">
+              <li><a href="#">About Us</a></li>
+              <li><a href="#">Careers</a></li>
+            </ul>
+          </li>
+
           <li>
             <a href="./book_demo.html" class="flex_box">
               <span class="symbol">✦</span>
@@ -38,6 +51,7 @@
           </li>
         </ul>
       </div>
+
       <button class="menu-toggle" aria-label="Toggle menu">
         <span></span>
         <span></span>
@@ -85,7 +99,6 @@
                 muted
                 loop
                 playsinline
-                webkit-playsinline
                 preload="auto"
                 controlsList="nodownload nofullscreen noremoteplayback"
                 disablePictureInPicture
@@ -599,26 +612,58 @@
       document.addEventListener("DOMContentLoaded", function () {
         const menuToggle = document.querySelector(".menu-toggle");
         const buttonContent = document.querySelector(".button_content");
+        const submenuParents = document.querySelectorAll(".has-submenu");
 
+        // Toggle mobile menu
         menuToggle.addEventListener("click", function () {
           this.classList.toggle("active");
           buttonContent.classList.toggle("active");
         });
 
-        // Close menu when clicking on a link
-        const menuLinks = document.querySelectorAll(".button_content a");
-        menuLinks.forEach((link) => {
+        // Close menu when clicking NON-submenu links
+        const normalLinks = document.querySelectorAll(
+          ".button_content a:not(.has-submenu > a)"
+        );
+
+        normalLinks.forEach((link) => {
           link.addEventListener("click", function () {
-            menuToggle.classList.remove("active");
-            buttonContent.classList.remove("active");
+            // Only close on mobile
+            if (window.innerWidth <= 768) {
+              menuToggle.classList.remove("active");
+              buttonContent.classList.remove("active");
+            }
           });
         });
 
-        // Close menu when clicking outside
+        // ----------- SUBMENU LOGIC -----------
+        submenuParents.forEach((item) => {
+          const submenu = item.querySelector(".submenu");
+          const trigger = item.querySelector("a");
+
+          trigger.addEventListener("click", function (e) {
+            // Mobile only
+            if (window.innerWidth <= 768) {
+              e.preventDefault();
+              e.stopPropagation(); // Prevent closing parent menu
+
+              // Toggle this submenu
+              item.classList.toggle("open");
+              submenu.classList.toggle("open");
+            }
+          });
+        });
+
+        // Close when clicking outside everything
         document.addEventListener("click", function (event) {
           if (!event.target.closest(".navbar_section")) {
             menuToggle.classList.remove("active");
             buttonContent.classList.remove("active");
+
+            // Close ALL submenus
+            submenuParents.forEach((item) => {
+              item.classList.remove("open");
+              item.querySelector(".submenu").classList.remove("open");
+            });
           }
         });
       });
@@ -691,13 +736,26 @@
       });
 
       const video = document.querySelector(".home_section .vid_box video");
+
       video.addEventListener("loadeddata", () => {
+        // Force play for Safari
+        video.play().catch((err) => {
+          console.log("Autoplay prevented:", err);
+        });
+
         gsap.from(video, {
           clipPath: "inset(0 0 100% 0)",
           duration: 3,
           ease: "power4.inOut",
           delay: 1.2,
         });
+      });
+
+      // Additional fallback
+      video.addEventListener("canplay", () => {
+        if (video.paused) {
+          video.play().catch((err) => console.log("Play failed:", err));
+        }
       });
 
       // ------Slider-------
