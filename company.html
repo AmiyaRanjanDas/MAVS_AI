@@ -23,7 +23,7 @@
       <div class="loader"></div>
     </div>
 
-    <!-- =====nav_section===== -->   
+    <!-- =====nav_section===== -->
     <div class="navbar_section" id="navbar_section">
       <div class="logo">
         <a href="./index.html">
@@ -36,7 +36,9 @@
             <a href="javascript:void(0)" class="nav-link">Solutions</a>
             <ul class="submenu">
               <li><a href="./index.html#ai_section_1">For Employees</a></li>
-              <li><a href="./index.html#ai_section_2">For Homegrown AI Apps</a></li>
+              <li>
+                <a href="./index.html#ai_section_2">For Homegrown AI Apps</a>
+              </li>
               <li><a href="./index.html#ai_section_3">For AI Governance</a></li>
             </ul>
           </li>
@@ -125,7 +127,7 @@
                   class="img-fluid"
                 />
               </div>
-              <h2 class="mt-3 mb-1 mt-md-4 mb-md-2">Abhijeet Tannu</h2>
+              <h2 class="mt-3 mb-1 mt-md-4 mb-md-2">Abhijit Tannu</h2>
               <h5 class="mb-2">Co-Founder</h5>
               <a
                 href="https://www.linkedin.com/in/abhijittannu"
@@ -289,31 +291,64 @@
           delay: 0.2,
         });
       });
+
       // ------navbar-------
       // Add this JavaScript to handle the menu toggle
       document.addEventListener("DOMContentLoaded", function () {
         const menuToggle = document.querySelector(".menu-toggle");
         const buttonContent = document.querySelector(".button_content");
+        const submenuParents = document.querySelectorAll(".has-submenu");
 
+        // Toggle mobile menu
         menuToggle.addEventListener("click", function () {
           this.classList.toggle("active");
           buttonContent.classList.toggle("active");
         });
 
-        // Close menu when clicking on a link
-        const menuLinks = document.querySelectorAll(".button_content a");
-        menuLinks.forEach((link) => {
+        // Close menu when clicking NON-submenu links
+        const normalLinks = document.querySelectorAll(
+          ".button_content a:not(.has-submenu > a)"
+        );
+
+        normalLinks.forEach((link) => {
           link.addEventListener("click", function () {
-            menuToggle.classList.remove("active");
-            buttonContent.classList.remove("active");
+            // Only close on mobile
+            if (window.innerWidth <= 768) {
+              menuToggle.classList.remove("active");
+              buttonContent.classList.remove("active");
+            }
           });
         });
 
-        // Close menu when clicking outside
+        // ----------- SUBMENU LOGIC -----------
+        submenuParents.forEach((item) => {
+          const submenu = item.querySelector(".submenu");
+          const trigger = item.querySelector("a");
+
+          trigger.addEventListener("click", function (e) {
+            // Mobile only
+            if (window.innerWidth <= 768) {
+              e.preventDefault();
+              e.stopPropagation(); // Prevent closing parent menu
+
+              // Toggle this submenu
+              item.classList.toggle("open");
+              submenu.classList.toggle("open");
+            }
+          });
+        });
+
+        // Close when clicking outside everything
         document.addEventListener("click", function (event) {
           if (!event.target.closest(".navbar_section")) {
             menuToggle.classList.remove("active");
             buttonContent.classList.remove("active");
+
+            // Close ALL submenus
+            submenuParents.forEach((item) => {
+              item.classList.remove("open");
+              item.querySelector(".submenu").classList.remove("open");
+            });
           }
         });
       });

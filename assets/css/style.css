@@ -1,5 +1,5 @@
 :root {
-  --primary-color: #183c58;
+  --primary-color: #1a2943;
   --secondary-color: #ef8122;
   --white-color: #ffffff;
 }
@@ -404,7 +404,7 @@ video::-webkit-media-controls-start-playback-button {
 /* ========home_section======= */
 .home_section {
   position: relative;
-  height: 109vh;
+  height: 83vh;
   background: var(--primary-color);
   color: white;
 }
@@ -471,13 +471,13 @@ video::-webkit-media-controls-start-playback-button {
 }
 .home_section .vid_box {
   position: relative;
-  height: 95vh;
-  top: -5vh;
+  height: 74vh;
+  top: -3vh;
 }
 .home_section .vid_box video {
   position: absolute;
   z-index: 0;
-  left: 57%;
+  left: 56.5%;
   top: 50%;
   transform: translate(-50%, -50%) scale(1.2);
   height: 100%;
@@ -495,12 +495,12 @@ video::-webkit-media-controls-start-playback-button {
   height: 100%;
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 6px;
   padding: 10px;
   height: min-content;
 }
 .home_section .img_box img {
-  transform: scale(0.8);
+  transform: scale(0.7);
 }
 
 @media (max-width: 768px) {
@@ -580,8 +580,8 @@ video::-webkit-media-controls-start-playback-button {
   padding: 40px 20px;
 }
 .risk_section .card .img_box img {
-  width: 85px;
-  height: 85px;
+  width: 75px;
+  height: 75px;
   object-fit: contain;
 }
 .risk_section .card h4 {
@@ -590,7 +590,7 @@ video::-webkit-media-controls-start-playback-button {
 }
 .risk_section .card p {
   margin: 0;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   color: var(--white-color);
 }
 @media (max-width: 500px) {
@@ -765,7 +765,7 @@ video::-webkit-media-controls-start-playback-button {
   color: white;
 }
 .ai_section_content .hdr {
-  margin-bottom: 15px;
+  margin-bottom: 10px;
   display: flex;
   align-items: center;
   gap: 10px;
@@ -783,7 +783,7 @@ video::-webkit-media-controls-start-playback-button {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   font-weight: 700;
-  margin-bottom: 4px;
+  margin-bottom: 1rem;
 }
 .ai_section_content h5 {
   font-weight: 700;
@@ -1007,6 +1007,10 @@ video::-webkit-media-controls-start-playback-button {
   padding: 40px 30px;
   gap: 20px;
   height: 100%;
+  transition: 0.3s ease-in-out;
+}
+.enterprise_section .card:hover {
+  transform: scale(1.025);
 }
 .enterprise_section .card .img_box {
   background: linear-gradient(180deg, #0997b7b7, var(--primary-color));
@@ -1379,6 +1383,7 @@ video::-webkit-media-controls-start-playback-button {
   font-weight: 700;
 }
 .team_section .box p {
+  font-size: 1.2rem;
   font-weight: 400;
 }
 .team_section .box a {
@@ -1390,6 +1395,9 @@ video::-webkit-media-controls-start-playback-button {
     top: 70px;
     height: 500px;
     padding: 0 50px;
+  }
+  .team_section .box p {
+    font-size: 1rem;
   }
 }
 @media only screen and (max-width: 400px) {
