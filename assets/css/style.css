@@ -1198,7 +1198,8 @@ video::-webkit-media-controls-start-playback-button {
   height: 150px;
 }
 .contact_section .content a {
-  text-decoration: none;
+  text-decoration: underline;
+  font-weight: 600;
   color: inherit;
 }
 .contact_section .content a img {
