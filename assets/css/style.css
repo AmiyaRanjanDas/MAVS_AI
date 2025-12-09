@@ -44,9 +44,14 @@ video::-webkit-media-controls-start-playback-button {
 }
 .head_sec p {
   color: var(--white-color);
-  font-size: 1.1rem;
+  font-size: 1.2rem;
 }
 
+@media (max-width: 768px) {
+  .head_sec p {
+    font-size: 1rem;
+  }
+}
 /* ----preloader----- */
 #preloader {
   position: fixed;
@@ -429,6 +434,9 @@ video::-webkit-media-controls-start-playback-button {
 .home_section .content h5 span {
   color: var(--secondary-color);
 }
+.home_section .content p {
+  font-size: 1.2rem;
+}
 .home_section .content .btn_box {
   display: flex;
   align-items: center;
@@ -513,6 +521,9 @@ video::-webkit-media-controls-start-playback-button {
   .home_section .content h2 {
     font-size: 35px;
   }
+  .home_section .content p {
+    font-size: 1rem;
+  }
   .home_section .content .btn_box {
     justify-content: center;
   }
@@ -579,7 +590,13 @@ video::-webkit-media-controls-start-playback-button {
 }
 .risk_section .card p {
   margin: 0;
+  font-size: 1.2rem;
   color: var(--white-color);
+}
+@media (max-width: 500px) {
+  .risk_section .card p {
+    font-size: 1rem;
+  }
 }
 @media (max-width: 500px) {
   .risk_section .card {
@@ -679,13 +696,21 @@ video::-webkit-media-controls-start-playback-button {
   -webkit-text-fill-color: transparent;
   font-weight: 700;
   margin-bottom: 20px;
+  font-size: 22px;
 }
 .slider_section .card p {
   margin: 0;
   color: var(--white-color);
-  font-size: 15px;
+  font-size: 1.3rem;
 }
-
+@media (max-width: 768px) {
+  .slider_section .card h4 {
+    font-size: 20px;
+  }
+  .slider_section .card p {
+    font-size: 1rem;
+  }
+}
 @media (max-width: 500px) {
   .slider_section .card {
     padding: 30px;
@@ -1249,8 +1274,8 @@ video::-webkit-media-controls-start-playback-button {
   color: var(--secondary-color);
 }
 .about_section .content p {
-  font-size: 14px;
-  line-height: 18px;
+  font-size: 1.2rem;
+  line-height: 1.5rem;
   font-weight: 400;
   color: rgb(220, 220, 220);
 }
@@ -1258,7 +1283,14 @@ video::-webkit-media-controls-start-playback-button {
   font-weight: 700;
   color: white;
 }
-
+@media only screen and (max-width: 768px) {
+  .about_section .content p {
+    font-size: 1rem;
+    line-height: 1.2rem;
+    font-weight: 400;
+    color: rgb(220, 220, 220);
+  }
+}
 /* ========leader_section======== */
 .leader_section {
   position: relative;

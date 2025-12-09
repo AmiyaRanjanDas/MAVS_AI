@@ -25,12 +25,27 @@
       </div>
       <div class="button_content">
         <ul>
-          <li>
-            <a href="./index.html#introduction_section" class="nav-link"
-              >solutions</a
-            >
+          <li class="has-submenu">
+            <a href="javascript:void(0)" class="nav-link">Solutions</a>
+            <ul class="submenu">
+              <li><a href="./index.html#ai_section_1">For Employees</a></li>
+              <li>
+                <a href="./index.html#ai_section_2">For Homegrown AI Apps</a>
+              </li>
+              <li>
+                <a href="./index.html#ai_section_3">For AI Governance</a>
+              </li>
+            </ul>
           </li>
-          <li><a href="./company.html" class="nav-link">company</a></li>
+
+          <li class="has-submenu">
+            <a href="javascript:void(0)" class="nav-link">Company</a>
+            <ul class="submenu">
+              <li><a href="./company.html#about_section">About Us</a></li>
+              <li><a href="./company.html#team_section">Careers</a></li>
+            </ul>
+          </li>
+
           <li>
             <a href="#" class="flex_box">
               <span class="symbol">✦</span>
@@ -40,6 +55,7 @@
           </li>
         </ul>
       </div>
+
       <button class="menu-toggle" aria-label="Toggle menu">
         <span></span>
         <span></span>
@@ -279,7 +295,6 @@
           btn.classList.add("loading");
           btn.disabled = true;
           btn.innerHTML = "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Sending...";
-
 
           // Send with EmailJS
           emailjs
