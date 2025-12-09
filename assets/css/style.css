@@ -1,5 +1,5 @@
 :root {
-  --primary-color: #1b2942;
+  --primary-color: #183c58;
   --secondary-color: #ef8122;
   --white-color: #ffffff;
 }
@@ -471,13 +471,13 @@ video::-webkit-media-controls-start-playback-button {
 }
 .home_section .vid_box {
   position: relative;
-  height: 100vh;
+  height: 95vh;
   top: -5vh;
 }
 .home_section .vid_box video {
   position: absolute;
   z-index: 0;
-  left: 54%;
+  left: 57%;
   top: 50%;
   transform: translate(-50%, -50%) scale(1.2);
   height: 100%;
@@ -509,9 +509,9 @@ video::-webkit-media-controls-start-playback-button {
   }
   .home_section .vid_box {
     position: relative;
-    height: 75vh;
+    height: 65vh;
   }
-  .home_section video {
+  .home_section .vid_box video {
     left: 50% !important;
   }
   .home_section .content {
