@@ -10,7 +10,6 @@
 html,
 body {
   overflow-x: hidden !important;
-  background: var(--primary-color);
 }
 body {
   font-family: "FunnelDisplay", sans-serif !important;
