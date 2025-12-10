@@ -514,10 +514,10 @@ video::-webkit-media-controls-start-playback-button {
   }
   .home_section .vid_box {
     position: relative;
-    height: 65vh;
+    height: 60vh;
   }
   .home_section .vid_box video {
-    left: 50% !important;
+    left: 53% !important;
   }
   .home_section .content {
     text-align: center;
