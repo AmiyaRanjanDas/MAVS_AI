@@ -556,7 +556,8 @@ video::-webkit-media-controls-start-playback-button {
     padding: 30px 0 50px;
   }
   .home_section .content h2 {
-    font-size: 35px;
+    font-size: 40px;
+  line-height: 45px;
   }
   .home_section .content p {
     font-size: 1rem;
