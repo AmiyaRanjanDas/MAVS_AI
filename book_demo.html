@@ -26,7 +26,9 @@
       <div class="button_content">
         <ul>
           <li class="has-submenu">
-            <a href="javascript:void(0)" class="nav-link">Solutions</a>
+            <a href="./index.html#introduction_section" class="nav-link"
+              >Solutions</a
+            >
             <ul class="submenu">
               <li><a href="./index.html#ai_section_1">For Employees</a></li>
               <li>
@@ -39,7 +41,7 @@
           </li>
 
           <li class="has-submenu">
-            <a href="javascript:void(0)" class="nav-link">Company</a>
+            <a href="./company.html" class="nav-link">Company</a>
             <ul class="submenu">
               <li><a href="./company.html">About Us</a></li>
               <li><a href="./company.html#team_section">Careers</a></li>
@@ -78,7 +80,7 @@
               </h1>
               <p>
                 Talk to us to discover how Mavs AI can help you to unleash AI,
-                securely
+                securely.
               </p>
             </div>
           </div>
@@ -164,7 +166,7 @@
           </div>
           <div class="col-md-4 mb-4 mb-md-0 flex_box align-items-start">
             <div class="linkz">
-              <h6>SOLUTIONS</h6>
+              <h6><a href="./index.html#introduction_section">SOLUTIONS</a></h6>
               <p><a href="./index.html#ai_section_1">For Employees</a></p>
               <p>
                 <a href="./index.html#ai_section_2">For Homegrown AI Apps</a>
@@ -174,7 +176,7 @@
           </div>
           <div class="col-md-4 flex_box align-items-start">
             <div class="linkz">
-              <h6>COMPANY</h6>
+              <h6><a href="./company.html">COMPANY</a></h6>
               <p><a href="./company.html">About Us </a></p>
               <p><a href="./company.html#team_section">Careers</a></p>
             </div>
@@ -200,7 +202,7 @@
         setTimeout(() => preloader.remove(), 500); // remove from DOM
       });
 
-        // ------navbar-------
+      // ------navbar-------
       // Add this JavaScript to handle the menu toggle
       document.addEventListener("DOMContentLoaded", function () {
         const menuToggle = document.querySelector(".menu-toggle");
@@ -314,7 +316,7 @@
           }
 
           if (!validateEmail(email)) {
-            alert("Please enter a valid email address.");
+            alert("Please enter a valid work email address.");
             return;
           }
 
@@ -364,7 +366,49 @@
 
       // Email validation function
       function validateEmail(email) {
-        return /\S+@\S+\.\S+/.test(email);
+        // Trim spaces
+        email = email.trim().toLowerCase();
+
+        // Basic email format (RFC-like, no invalid chars)
+        const emailRegex = /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$/;
+
+        // Block personal email domains
+        const blockedDomains = [
+          "gmail.com",
+          "yahoo.com",
+          "outlook.com",
+          "hotmail.com",
+          "icloud.com",
+          "aol.com",
+        ];
+
+        // Block role-based email prefixes
+        const blockedPrefixes = [
+          "admin",
+          "support",
+          "sales",
+          "marketing",
+          "info",
+        ];
+
+        // Format validation
+        if (!emailRegex.test(email)) {
+          return false;
+        }
+
+        const [localPart, domain] = email.split("@");
+
+        // Block personal domains
+        if (blockedDomains.includes(domain)) {
+          return false;
+        }
+
+        // Block role-based emails
+        if (blockedPrefixes.includes(localPart)) {
+          return false;
+        }
+
+        return true;
       }
     </script>
   </body>

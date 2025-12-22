@@ -2,6 +2,13 @@
   --primary-color: #1a2943;
   --secondary-color: #ef8122;
   --white-color: #ffffff;
+  --gradient-orange-shimmer: linear-gradient(
+    45deg,
+    hsl(14 100% 57%),
+    hsl(25 100% 60%),
+    hsl(14 100% 57%),
+    hsl(25 100% 60%)
+  );
 }
 @font-face {
   font-family: "FunnelDisplay";
@@ -28,18 +35,32 @@ video::-webkit-media-controls-start-playback-button {
   align-items: center;
   justify-content: center;
 }
+
+@keyframes shimmer {
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
 /* --------head_sec-------- */
 .head_sec h2 {
   color: var(--white-color);
   font-weight: 700;
 }
-.head_sec h2 span {
-  color: var(--secondary-color);
+.head_sec h2 span,
+.head_sec .alt_head {
+  background: var(--gradient-orange-shimmer);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  background-size: 200% 200%;
+  animation: shimmer 3s ease-in-out infinite;
 }
 .head_sec .alt_head {
-  background: -webkit-linear-gradient(0deg, #e75525, var(--secondary-color));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  animation: shimmer 6s ease-in-out infinite;
   font-weight: 700;
 }
 .head_sec p {
@@ -164,6 +185,7 @@ video::-webkit-media-controls-start-playback-button {
 }
 .navbar_section .button_content ul li {
   list-style: none;
+  width: max-content;
 }
 .navbar_section .button_content a {
   text-decoration: none;
@@ -173,6 +195,9 @@ video::-webkit-media-controls-start-playback-button {
   font-size: 13px;
   transition: 0.4s ease-in-out;
   padding: 10px 0;
+}
+.navbar_section .button_content ul .flex_box{
+  color: var(--secondary-color);
 }
 .navbar_section .button_content .nav-link {
   margin-top: 20px;
@@ -365,7 +390,7 @@ video::-webkit-media-controls-start-playback-button {
 /* ---------------------- MOBILE SUBMENU ---------------------- */
 @media (max-width: 768px) {
   .has-submenu {
-    width: 100%;
+    width: 100% !important;
   }
   .submenu {
     position: static;
@@ -431,10 +456,17 @@ video::-webkit-media-controls-start-playback-button {
 }
 .home_section .content h2 {
   clip-path: inset(0 0% 0 0);
+  font-size: 50px;
+  line-height: 55px;
+  font-weight: 500;
 }
 .home_section .content h2 span {
-  font-weight: 700;
-  color: var(--secondary-color);
+  background: var(--gradient-orange-shimmer);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  background-size: 200% 200%;
+  animation: shimmer 3s ease-in-out infinite;
 }
 .home_section .content h5 span {
   color: var(--secondary-color);
@@ -784,9 +816,12 @@ video::-webkit-media-controls-start-playback-button {
   height: 30px;
 }
 .ai_section_content h2 {
-  background: -webkit-linear-gradient(0deg, #e75525, var(--secondary-color));
+  background: var(--gradient-orange-shimmer);
+  background-clip: text;
   -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: transparent;
+  background-size: 200% 200%;
+  animation: shimmer 8s ease-in-out infinite;
   font-weight: 700;
   margin-bottom: 1rem;
 }
@@ -972,9 +1007,12 @@ video::-webkit-media-controls-start-playback-button {
   background: var(--primary-color);
 }
 .workflow_section h2 {
-  background: -webkit-linear-gradient(0deg, #e75525, var(--secondary-color));
+  background: var(--gradient-orange-shimmer);
+  background-clip: text;
   -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: transparent;
+  background-size: 200% 200%;
+  animation: shimmer 4s ease-in-out infinite;
   font-weight: 700;
 }
 
@@ -1236,7 +1274,7 @@ video::-webkit-media-controls-start-playback-button {
     height: 120px;
   }
   .contact_section .linkz h6 {
-    margin: 0 0 25px ;
+    margin: 0 0 25px;
   }
 }
 @media only screen and (max-width: 480px) {
@@ -1276,16 +1314,20 @@ video::-webkit-media-controls-start-playback-button {
 .about_section .head_sec {
   margin: 20px 0 75px;
 }
-.about_section .head_sec h5 span {
-  color: var(--secondary-color);
+.about_section .head_sec h5 span,
+.about_section .content h2 span { 
+  background: var(--gradient-orange-shimmer);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  background-size: 200% 200%;
+  animation: shimmer 3s ease-in-out infinite;
   font-weight: 700;
 }
 .about_section .content h2 {
   font-weight: 700;
 }
-.about_section .content h2 span {
-  color: var(--secondary-color);
-}
+
 .about_section .content p {
   font-size: 1.2rem;
   line-height: 1.5rem;
